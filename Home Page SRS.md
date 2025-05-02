@@ -1,5 +1,3 @@
----
-
 ### **Home Page SRS (Updated)**
 
 #### 1. **Introduction**
@@ -82,4 +80,3 @@
 
    * Authentication system for login verification.
 
----
