@@ -1,0 +1,151 @@
+:root {
+  --primary-blue: #0d2b51;          /* Darker navy */
+  --secondary-blue: #163e6e;        /* Slightly softer navy */
+  --light-blue: #5c9edc;            /* Muted accent */
+  --dark-blue: #0a2540;             /* Deep navy */
+  --accent-orange: #f4a024;         /* Logo-inspired warm orange */
+  --white: #ffffff;
+  --background-light: #fdfaf6;      /* Matches the light beige in the logo background */
+}
+    
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f5f7fa;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+/* Sunburst Background - Updated Colors */
+.sunburst-bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+  opacity: 0.08;
+  background: 
+    radial-gradient(
+      circle at center,
+      transparent 40%,
+      var(--light-blue) 50%,
+      transparent 60%
+    ),
+    repeating-conic-gradient(
+      from 0deg,
+      var(--secondary-blue) 0deg 1deg,
+      transparent 1deg 10deg
+    ),
+    radial-gradient(
+      circle at center,
+      transparent 60%,
+      var(--primary-blue) 65%,
+      transparent 70%
+    );
+  background-blend-mode: overlay;
+  filter: blur(1px);
+}
+    .login-container {
+      max-width: 500px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(13, 75, 142, 0.1);
+      background-color: var(--white);
+    }
+
+    .login-header {
+      background: linear-gradient(to left, var(--secondary-blue), var(--primary-blue));
+      color: var(--white);
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .login-header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-orange), rgba(226, 124, 37, 0.5));
+    }
+
+    .login-body {
+      padding: 2.5rem;
+      background-color: var(--white);
+    }
+
+    .form-control {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      border-radius: 8px;
+    }
+
+    .form-control:focus {
+      border-color: var(--light-blue);
+      box-shadow: 0 0 0 0.25rem rgba(100, 181, 246, 0.25);
+    }
+
+    .btn-login {
+      background-color: var(--accent-orange);
+      color: var(--white);
+      border: none;
+      padding: 12px;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    .btn-login:hover {
+      background-color: #d1711f;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(226, 124, 37, 0.3);
+    }
+
+    .text-link {
+      color: var(--secondary-blue);
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .text-link:hover {
+      color: var(--primary-blue);
+      text-decoration: underline;
+    }
+
+    .form-check-input:checked {
+      background-color: var(--accent-orange);
+      border-color: var(--accent-orange);
+    }
+
+    .divider {
+      border-top: 1px solid #eee;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+
+    .divider::before {
+      content: "أو";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      padding: 0 10px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .brand-logo {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .login-body {
+        padding: 1.5rem;
+      }
+    }

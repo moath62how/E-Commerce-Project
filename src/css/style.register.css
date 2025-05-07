@@ -1,0 +1,228 @@
+/* style.login.css - Updated with Reference Color Scheme */
+:root {
+  --primary-blue: #0d2b51;          /* Darker navy */
+  --secondary-blue: #163e6e;        /* Slightly softer navy */
+  --light-blue: #5c9edc;            /* Muted accent */
+  --dark-blue: #0a2540;             /* Deep navy */
+  --accent-orange: #f4a024;         /* Logo-inspired warm orange */
+  --white: #ffffff;
+  --background-light: #fdfaf6;      /* Matches the light beige in the logo background */
+}
+    
+body {
+  font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-gray);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Sunburst Background - Updated Colors */
+.sunburst-bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+  opacity: 0.08;
+  background: 
+    radial-gradient(
+      circle at center,
+      transparent 40%,
+      var(--light-blue) 50%,
+      transparent 60%
+    ),
+    repeating-conic-gradient(
+      from 0deg,
+      var(--secondary-blue) 0deg 1deg,
+      transparent 1deg 10deg
+    ),
+    radial-gradient(
+      circle at center,
+      transparent 60%,
+      var(--primary-blue) 65%,
+      transparent 70%
+    );
+  background-blend-mode: overlay;
+  filter: blur(1px);
+}
+
+/* Login/Register Container */
+.login-container,
+.register-container {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(13, 75, 142, 0.1);
+  background-color: var(--white);
+  overflow: hidden;
+  margin: auto;
+}
+
+/* Header Section */
+.login-header,
+.register-header {
+  background: linear-gradient(to left, var(--secondary-blue), var(--primary-blue));
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.login-header::after,
+.register-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-orange), rgba(226, 124, 37, 0.5));
+}
+
+/* Body Section */
+.login-body,
+.register-body {
+  padding: 2rem;
+  background-color: var(--white);
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-control {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--light-blue);
+  box-shadow: 0 0 0 0.25rem rgba(100, 181, 246, 0.25);
+}
+
+/* Buttons */
+.btn-login,
+.btn-register {
+  background-color: var(--accent-orange);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+  background-color: #d1711f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(226, 124, 37, 0.3);
+}
+
+/* Secondary Button */
+.btn-outline-primary {
+  border-color: var(--secondary-blue);
+  color: var(--secondary-blue);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--secondary-blue);
+  border-color: var(--secondary-blue);
+}
+
+/* Links */
+.text-link {
+  color: var(--secondary-blue);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.text-link:hover {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+/* Error Messages */
+.error-message {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: none;
+  text-align: right;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+/* Remember Me Checkbox */
+.form-check-input:checked {
+  background-color: var(--accent-orange);
+  border-color: var(--accent-orange);
+}
+
+.form-check {
+  padding-right: 1.5em;
+  text-align: right;
+}
+
+.form-check-input {
+  float: right;
+  margin-right: -1.5em;
+  margin-left: 0;
+}
+
+.divider {
+  border-top: 1px solid #eee;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.divider::before {
+  content: "أو";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  padding: 0 10px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .login-body,
+  .register-body {
+    padding: 1.5rem;
+  }
+  
+  .login-header,
+  .register-header {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .register-wrapper {
+    align-items: flex-start;
+    padding-top: 1rem;
+  }
+}

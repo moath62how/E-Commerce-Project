@@ -1,0 +1,287 @@
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #fff7ed;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fff7ed;
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+      border-bottom: 2px solid #66666657;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+         
+    }
+
+    .header-btn {
+      background: #fff;
+      color: #ec9810;
+      border: 1px solid #ffffff;
+      padding: 12px 20px;
+      border-radius: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 10px;
+      box-shadow: 0 4px 12px 0 #00000029;    }
+
+    .main {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 40px;
+      flex-wrap: wrap;
+      direction: rtl;
+      margin-top: 100px;
+
+    }
+
+    .main img {
+      max-width: 300px;
+      border-radius: 20px;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .text {
+      max-width: 600px;
+      text-align: right;
+    }
+
+    .text h1 {
+      font-size: 30px;
+      color: #f59e0b;
+    }
+
+    .text ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .text ul li::before {
+      content: "✔️";
+      margin-left: 10px;
+      color: green;
+    }
+
+    .btn {
+      background: #f59e0b;
+      color: white;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 15px;
+      border: none;
+      margin-top: 20px;
+    }
+
+    .license {
+      margin-top: 15px;
+      background: #fff7c5;
+      padding: 8px 14px;
+      border-radius: 10px;
+      display: inline-block;
+      font-size: 14px;
+      color: #777;
+    }
+
+ .why-section{
+  width: 90%;
+  background-color: white;
+  padding-top: 40px;
+  margin: 20px 60px 0px 0px;
+  justify-content: space-between;
+  text-align: center;
+  
+ }
+    .why-section h2 {
+  color: #f59e0b;
+  font-size: 28px;
+  margin-bottom: 40px;
+
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+
+.feature-box {
+  flex: 1;
+  min-width: 220px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature-box img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.feature-box p {
+  font-size: 18px;
+  color: #1f2937;
+  line-height: 1.8;
+  font-weight: bolder;
+}
+
+
+
+
+
+
+
+.testimonials-container {
+
+      margin-top: 150px;
+      text-align: center;
+      padding: 60px 20px;
+      color: white;
+      background-color:  #69d394;
+    }
+
+    .testimonials-container h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .testimonials-container p {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      color: #333;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: right;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card::before {
+      content: "“";
+      font-size: 40px;
+      color: #ccc;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+    }
+
+    .stars {
+      color: orange;
+      margin-top: 15px;
+    }
+
+    .author {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+
+    .faq-section .accordion {
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: none;
+    text-align: right;
+    outline: none;
+    font-size: 18px;
+    transition: 0.3s;
+    border-bottom: 1px solid #fcefdc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 300;
+  }
+
+  .faq-section .accordion:hover {
+    background-color: #fef8ee;
+  }
+
+  .faq-section .accordion:after {
+    content: '▾';
+    font-size: 14px;
+    color: #333;
+    transition: 0.3s;
+  }
+
+  .faq-section .accordion.active:after {
+    content: '▴';
+  }
+
+  .faq-section .panel {
+    padding: 0 20px;
+    display: none;
+    background-color: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid #fcefdc;
+  }
+
+  @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+  }
+
+  .header-btn {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  .main {
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 120px;
+  }
+
+  .main img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .text {
+    max-width: 100%;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-box {
+    max-width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .faq-section .accordion {
+    font-size: 16px;
+  }
+}
