@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Quizo Template</title>
+
+  <link rel="stylesheet" href="./css/style.test.css">
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <div class="logo">Quizo <span>TEMPLATE</span></div>
+      <div class="timer">
+        <p>Quiz Time start</p>
+        <div class="time-circle">
+          <div class="circle-spinner" id="spinner"></div>
+          <span id="timerValue">60</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-body">
+      <div class="image-box">
+        <img id="questionImage" src="" alt="Quiz Image">
+      </div>
+      <div class="question-box">
+        <h2 id="questionText">Question Text</h2>
+      </div>
+      <div class="options">
+        <button class="option" id="option1">Option 1</button>
+        <button class="option" id="option2">Option 2</button>
+        <button class="option" id="option3">Option 3</button>
+        <button class="option" id="option4">Option 4</button>
+      </div>
+      <div class="footer">
+        <div class="question-count" id="questionCount">Question 1 / 4</div>
+        <button class="next-btn" id="nextButton">NEXT QUESTION →</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./js/test.js">  </script>
+
+</body>
+
+</html>

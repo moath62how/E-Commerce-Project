@@ -1,28 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Your head content -->
-  </head>
-  <body>
-    <div class="container">
-      <h1>Welcome to Dashboard</h1>
-      <button id="logoutBtn" class="btn btn-danger">Logout</button>
-    </div>
-    <script>
-      // Check authentication
-      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-      if (!currentUser) {
-        window.location.href = "login.html";
-      }
 
-      // Logout functionality
-      document
-        .getElementById("logoutBtn")
-        .addEventListener("click", function () {
-          localStorage.removeItem("currentUser");
-          localStorage.removeItem("sessionExpiry");
-          window.location.href = "login.html";
-        });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Professional Homepage</title>
+  <link rel="stylesheet" href="./css/style.dashboard.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">Welcome to Quizo</div>
+
+    <div class="icons-wrapper">
+      <!-- Quiz Icon -->
+      <div class="icon" id="startQuizButton">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M19 3h-2c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2h-2c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM12 4h4v2h-4V4zm6 16H6v-8h12v8z">
+          </path>
+        </svg>
+        <p>Start Quiz</p>
+      </div>
+      <!-- Results Icon -->
+      <div class="icon" id="viewResultsButton">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z">
+          </path>
+        </svg>
+        <p>View Results</p>
+      </div>
+      <!-- Logout Icon -->
+      <div class="icon" id="logoutButton">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M10 17l5-5-5-5v10zm9-14H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z">
+          </path>
+        </svg>
+        <p>Logout</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Single overlay for all popups -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Popup for selecting tests -->
+  <div class="popup" id="testPopup">
+    <h3>Select a Test</h3>
+    <ul id="testList">
+      <!-- Tests will be dynamically populated here -->
+    </ul>
+    <button class="close-btn" id="closePopup">Close</button>
+  </div>
+
+  <!-- Popup for past results -->
+  <div class="popup" id="resultsPopup">
+    <h3>Past Results</h3>
+    <ul id="resultsList">
+      <!-- Results will be dynamically populated here -->
+    </ul>
+    <button class="close-btn" id="closeResultsPopup">Close</button>
+  </div>
+
+  <script src="./js/dashboard.js"></script>
+
+</body>
+
 </html>

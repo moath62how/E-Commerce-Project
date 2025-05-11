@@ -1,0 +1,150 @@
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff7ed;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .header {
+      font-size: 36px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 50px;
+    }
+
+    .icons-wrapper {
+      display: flex;
+      justify-content: space-around;
+      gap: 50px;
+      width: 100%;
+    }
+
+    .icon {
+      background-color: #fff;
+      border-radius: 15px;
+      width: 200px;
+      height: 200px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .icon:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .icon svg {
+      width: 60px;
+      height: 60px;
+      fill: #f59e0b;
+    }
+
+    .icon p {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    .footer {
+      font-size: 18px;
+      color: #999;
+      margin-top: 40px;
+    }
+
+    .footer span {
+      color: #f59e0b;
+    }
+
+    /* Popup styles */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .popup h3 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .popup ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .popup ul li {
+      margin-bottom: 10px;
+    }
+
+    .popup ul li button {
+      width: 100%;
+      padding: 10px;
+      background: #f59e0b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .popup ul li button:hover {
+      background: #d1711f;
+    }
+
+    .popup .close-btn {
+      display: block;
+      margin: 10px auto 0;
+      padding: 10px 20px;
+      background: #ccc;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .popup .close-btn:hover {
+      background: #bbb;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }

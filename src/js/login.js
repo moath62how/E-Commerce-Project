@@ -52,13 +52,16 @@ function handleLogin() {
 
   if (rememberMe) {
     const expiryDate = new Date();
-    expiryDate.setDate(expiryDate.getDate() + 7); // انتهاء بعد أسبوع
+    expiryDate.setDate(expiryDate.getDate() + 7);
     localStorage.setItem("sessionExpiry", expiryDate.toISOString());
   }
 
   showSuccess("تم تسجيل الدخول بنجاح! جاري التوجيه...");
   setTimeout(() => {
-    window.location.href = "dashboard.html";
+    if (user.role === "admin")
+      window.location.href = "admin-dashboard.html"
+    else
+      window.location.href = "dashboard.html";
   }, 1500);
 }
 

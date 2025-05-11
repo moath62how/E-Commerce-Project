@@ -1,6 +1,3 @@
-// User Registration System using localStorage
-
-// Initialize users array in localStorage if not exists
 if (!localStorage.getItem("users")) {
   localStorage.setItem("users", JSON.stringify([]));
 }
@@ -10,7 +7,6 @@ if (!localStorage.getItem("users")) {
  * @returns {boolean} - Returns false to prevent form submission
  */
 function registerUser() {
-  // Get form values
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
@@ -44,6 +40,7 @@ function registerUser() {
     email,
     password,
     phone,
+    role: "user",
     createdAt: new Date().toISOString(),
   };
 

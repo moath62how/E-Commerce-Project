@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Add New Test</h1>
+        <form id="addTestForm">
+            <div class="mb-3">
+                <label for="quizName" class="form-label">Quiz Name</label>
+                <input type="text" class="form-control" id="quizName" required>
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">Time (seconds)</label>
+                <input type="number" class="form-control" id="time" required>
+            </div>
+            <div class="mb-3">
+                <h5>Questions</h5>
+                <div id="questionsContainer">
+                    <!-- Questions will be dynamically added here -->
+                </div>
+                <button type="button" class="btn btn-secondary mt-2" onclick="addQuestion()">Add Question</button>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Test</button>
+        </form>
+    </div>
+
+    <script>
+        const questionsContainer = document.getElementById('questionsContainer');
+
+        // Function to add a new question form
+        function addQuestion() {
+            const questionIndex = questionsContainer.children.length;
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('mb-3', 'border', 'p-3', 'rounded');
+            questionDiv.innerHTML = `
+                <div class="mb-2">
+                    <label for="questionHeader${questionIndex}" class="form-label">Question Header</label>
+                    <input type="text" class="form-control" id="questionHeader${questionIndex}" required>
+                </div>
+                <div class="mb-2">
+                    <label for="correctAnswer${questionIndex}" class="form-label">Correct Answer</label>
+                    <input type="text" class="form-control" id="correctAnswer${questionIndex}" required>
+                </div>
+                <div class="mb-2">
+                    <label for="wrongAnswers${questionIndex}" class="form-label">Wrong Answers (comma-separated)</label>
+                    <input type="text" class="form-control" id="wrongAnswers${questionIndex}" required>
+                </div>
+                <div class="mb-2">
+                    <label for="imageUrl${questionIndex}" class="form-label">Image URL (optional)</label>
+                    <input type="text" class="form-control" id="imageUrl${questionIndex}">
+                </div>
+                <button type="button" class="btn btn-danger btn-sm" onclick="removeQuestion(this)">Remove Question</button>
+            `;
+            questionsContainer.appendChild(questionDiv);
+        }
+
+        // Function to remove a question form
+        function removeQuestion(button) {
+            button.parentElement.remove();
+        }
+
+        // Handle form submission
+        document.getElementById('addTestForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const quizName = document.getElementById('quizName').value;
+            const time = parseInt(document.getElementById('time').value, 10);
+
+            const questions = Array.from(questionsContainer.children).map((questionDiv, index) => {
+                return {
+                    QuestionHeader: document.getElementById(`questionHeader${index}`).value,
+                    C_answer: document.getElementById(`correctAnswer${index}`).value,
+                    W_answers: document.getElementById(`wrongAnswers${index}`).value.split(',').map(answer => answer.trim()),
+                    imageUrl: document.getElementById(`imageUrl${index}`)?.value || '', // Optional image URL
+                };
+            });
+
+            const tests = JSON.parse(localStorage.getItem('tests')) || [];
+            const newTest = {
+                testId: Date.now().toString(), // Use current timestamp as testId
+                QuizName: quizName,
+                Time: time,
+                Questions: questions,
+            };
+            tests.push(newTest);
+            localStorage.setItem('tests', JSON.stringify(tests));
+
+            alert('Test added successfully!');
+            window.location.href = './admin-dashboard.html';
+        });
+    </script>
+</body>
+
+</html>
